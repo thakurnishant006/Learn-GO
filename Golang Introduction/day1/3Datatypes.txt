@@ -1,0 +1,108 @@
+Introduction
+Go is a statically typed language, meaning that the type of a variable is known at compile time. Understanding data types is fundamental to programming in Go, as it ensures the correct usage and manipulation of data. This lesson will cover the primary data types in Go and how to use them.
+
+Basic Data Types
+1. Boolean
+Type: bool
+Values: true or false
+Example:
+
+var isActive bool = true
+fmt.Println(isActive) // Output: true
+
+2. Numeric Types
+Integers:
+Signed: int, int8, int16, int32, int64
+Unsigned: uint, uint8 (alias byte), uint16, uint32, uint64
+Floating-Point Numbers: float32, float64
+Complex Numbers: complex64, complex128
+Example:
+
+var age int = 30
+var temperature float64 = 98.6
+var complexNumber complex128 = complex(1, 2)
+
+fmt.Println(age)          // Output: 30
+fmt.Println(temperature)  // Output: 98.6
+fmt.Println(complexNumber) // Output: (1+2i)
+
+3. String
+Type: string
+Values: A sequence of characters
+Example:
+var name string = "Alice"
+fmt.Println(name) // Output: Alice
+
+Derived Types
+1. Arrays
+Fixed-size collection of elements of the same type
+
+var numbers [5]int = [5]int{1, 2, 3, 4, 5}
+fmt.Println(numbers) // Output: [1 2 3 4 5]
+
+2. Slices
+Dynamic-size collection of elements of the same type
+Example:
+var primes []int = []int{2, 3, 5, 7, 11}
+fmt.Println(primes) // Output: [2 3 5 7 11]
+
+3. Maps
+Collection of key-value pairs
+Example:
+
+var person map[string]int = map[string]int{"Alice": 25, "Bob": 30}
+fmt.Println(person) // Output: map[Alice:25 Bob:30]
+4. Structs
+Collection of fields
+Example:
+type Person struct {
+    Name string
+    Age  int
+}
+
+var alice Person = Person{"Alice", 25}
+fmt.Println(alice) // Output: {Alice 25}
+Type Inference
+Go can infer the type of a variable based on the value assigned to it.
+
+Example:
+name := "Alice" // Type inferred as string
+age := 25       // Type inferred as int
+fmt.Println(name, age) // Output: Alice 25
+Constants
+Constants are immutable values that are known at compile time.
+
+Example:
+
+const Pi float64 = 3.14159
+const Greeting string = "Hello, World!"
+
+fmt.Println(Pi)       // Output: 3.14159
+fmt.Println(Greeting) // Output: Hello, World!
+Zero Values
+Each data type in Go has a zero value, which is the default value when a variable is declared but not initialized.
+
+Example:
+
+var (
+    defaultBool    bool       // false
+    defaultInt     int        // 0
+    defaultFloat   float64    // 0.0
+    defaultString  string     // ""
+    defaultArray   [5]int     // [0 0 0 0 0]
+    defaultSlice   []int      // nil
+    defaultMap     map[string]int // nil
+)
+
+fmt.Println(defaultBool, defaultInt, defaultFloat, defaultString)
+fmt.Println(defaultArray, defaultSlice, defaultMap)
+
+
+Practice Questions
+Question 1: Declare and Initialize Variables
+Write a Go program that declares the following variables with appropriate values and prints them:
+
+isStudent (bool) with the value true
+year (int) with the value 2024
+gpa (float64) with the value 3.8
+university (string) with the value "XYZ University"
